@@ -24,10 +24,6 @@ function HomeScreen({navigation}){
 
 export default class SwipeableRow extends Component {
     renderLeftActions = (progress, dragX) => {
-        const trans = dragX.interpolate({
-            inputRange: [0, 50, 100, 101],
-            outputRange: [-20, 0, 0, 1],
-        });
         return (
             <NavigationContainer>
                 <Stack.Navigator>
@@ -37,9 +33,19 @@ export default class SwipeableRow extends Component {
         );
     };
 
+    renderRightActions = (progress, dragX) => {
+        return (
+            <NavigationContainer>
+                <Stack.Navigator>
+                    <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: 'Profile' }}/>
+                </Stack.Navigator>
+            </NavigationContainer>
+        );
+    };
+
     render() {
         return (
-                <Swipeable renderLeftActions={this.renderLeftActions}>
+                <Swipeable renderLeftActions={this.renderLeftActions} renderRightActions={this.renderRightActions}>
                     <RectButton style={styles.rectButton}>
                     </RectButton>
                 </Swipeable>
