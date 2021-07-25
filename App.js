@@ -1,4 +1,3 @@
-//import liraries
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import SwipeableRow from './SwipeableRow';
@@ -20,3 +19,4 @@ flex: 1,
 });
 //make this component available to the app
 export default App;
+ 
