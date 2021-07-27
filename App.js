@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import SwipeableRow from './SwipeableRow';
-// create a component
-class App extends Component {
-render() {
-return (
-<View style={styles.container}>
-<SwipeableRow></SwipeableRow>
-</View>
-);
-}
-}
-// define your styles
-const styles = StyleSheet.create({
-container: {
-flex: 1,
-},
-});
-//make this component available to the app
+import {NavigationContainer} from '@react-navigation/native';
+import CameraStack from './src/components/CameraStack'
+
+const App = () => {
+  return (
+    <NavigationContainer>
+
+      <CameraStack></CameraStack>
+
+    </NavigationContainer>
+
+  );
+};
+
 export default App;
- 
